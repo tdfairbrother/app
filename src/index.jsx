@@ -37,6 +37,6 @@ if (typeof window !== 'undefined') {
 }
 
 
-exports.App = App;
+module.exports = App;
 
 

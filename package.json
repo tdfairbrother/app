@@ -2,7 +2,7 @@
   "name": "TF-App",
   "version": "0.0.0",
   "description": "",
-  "main": "./lib/index.js",
+  "main": "./src/index.jsx",
   "private": true,
   "repository": {
     "type": "git",
@@ -20,7 +20,8 @@
     "webpack-dev-server": "^1.5.0"
   },
   "scripts": {
-    "start": "gulp dev-server"
+    "start": "gulp dev-server",
+    "build": "gulp build"
   },
   "author": "",
   "license": "ISC",
