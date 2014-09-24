@@ -2,7 +2,7 @@
   "name": "TF-App",
   "version": "0.0.0",
   "description": "",
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
   "private": true,
   "repository": {
     "type": "git",
@@ -25,7 +25,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "TF-CommentBox": "git://github.com/tdfairbrother/comment_box.git"
+    "TF-CommentBox": "git://github.com/tdfairbrother/comment_box.git",
+    "react-async": "^1.0.2",
+    "react-router-component": "^0.20.1"
   },
   "peerDependencies": {
     "react": ">=0.11.2"
