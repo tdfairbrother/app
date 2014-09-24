@@ -4,6 +4,6 @@ var React = require('react'),
     CommentBox = require('TF-CommentBox');
 
 React.renderComponent(
-    <CommentBox url="http://localhost:3001/comments.json" pollInterval={2000} />,
+    <CommentBox fireurl="https://burning-inferno-6221.firebaseio.com" />,
     document.getElementById('content')
 );
