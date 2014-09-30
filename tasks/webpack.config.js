@@ -25,7 +25,7 @@ module.exports = {
             ]
         },
         externals: {
-            'showdown': 'window.Showdown'
+            'React': 'window.React'
         }
     },
 
@@ -45,6 +45,9 @@ module.exports = {
             loaders: [
                 { test: /\.jsx|.js$/, loaders: ['jsx'] }
             ]
+        },
+        externals: {
+            'React': 'window.React'
         }
     }
 };

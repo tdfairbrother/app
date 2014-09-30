@@ -29,8 +29,5 @@
     "TF-CommentBox": "git://github.com/tdfairbrother/comment_box.git",
     "react-async": "^1.0.2",
     "react-router-component": "^0.20.1"
-  },
-  "peerDependencies": {
-    "react": ">=0.11.2"
   }
 }
