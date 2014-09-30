@@ -1,42 +1,48 @@
 /** @jsx React.DOM */
 
 var React = require('react');
+var RRouter = require('rrouter');
 var CommentBox = require('TF-CommentBox');
-var ReactRouter = require('react-router-component');
 
-var Pages       = ReactRouter.Pages;
-var Page        = ReactRouter.Page;
+var Routes = RRouter.Routes;
+var Route = RRouter.Route;
+var Link = RRouter.Link
 
-function Comments() {
-    return <CommentBox fireurl="https://burning-inferno-6221.firebaseio.com" />
-}
+var MainPage = React.createClass({
+    render: function() {
+        return(
+        <div>
+            Main page
+            <CommentBox fireurl="https://burning-inferno-6221.firebaseio.com" />
+            <Link href="/about">About page</Link>
+        </div>
+        )
+    }
+})
 
-var App = React.createClass({
-
+var AboutPage = React.createClass({
     render: function() {
         return (
-            <html>
-                <head>
-                    <script src="/assets/bundle.js" />
-                </head>
-                <Pages className="App" path={this.props.path}>
-                    <Page path="/" handler={Comments} />
-                </Pages>
-            </html>
-            );
+            <div>
+                About
+                <Link href="/">Home</Link>
+            </div>
+            )
     }
 });
 
-if (typeof window !== 'undefined') {
-    window.onload = function() {
-        React.renderComponent(
-            App(),
-            document.getElementById('content')
-        );
-    }
-}
+var routes = (
+    <Routes>
+        <Route path="/" view={MainPage} />
+        <Route path="/about" view={AboutPage} />
+    </Routes>
+    )
+
+
+RRouter.start(routes, function(view) {
+    React.renderComponent(view, document.body);
+});
+
 
 
 module.exports = App;
-
-
