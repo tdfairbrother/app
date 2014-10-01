@@ -2,7 +2,7 @@
   "name": "TF-App",
   "version": "0.0.0",
   "description": "",
-  "main": "./src/index.jsx",
+  "main": "./lib/index.js",
   "private": true,
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
     "gulp-plumber": "^0.6.5",
     "gulp-react": "^1.0.2",
     "gulp-webpack": "^0.3.0",
+    "gulp-replace": "^0.4.0",
     "jsx-loader": "^0.11.0",
     "react-hot-loader": "^0.4.2",
     "webpack": "^1.4.0-beta1",
@@ -29,7 +30,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "TF-CommentBox": "git://github.com/tdfairbrother/comment_box.git",
+    "react-async": "^1.0.2",
+    "react-router-component": "^0.20.1",
     "rrouter": "^0.4.2"
   },
   "peerDependencies": {

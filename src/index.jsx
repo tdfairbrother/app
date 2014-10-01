@@ -1,48 +1,74 @@
 /** @jsx React.DOM */
 
 var React = require('react');
-var RRouter = require('rrouter');
-var CommentBox = require('TF-CommentBox');
+var CommentBox = require('./CommentBox/');
+var Router = require('react-router-component');
 
-var Routes = RRouter.Routes;
-var Route = RRouter.Route;
-var Link = RRouter.Link
+var Locations = Router.Locations;
+var Location = Router.Location;
+var Link = Router.Link;
+
 
 var MainPage = React.createClass({
     render: function() {
         return(
         <div>
             Main page
-            <CommentBox fireurl="https://burning-inferno-6221.firebaseio.com" />
             <Link href="/about">About page</Link>
         </div>
         )
     }
-})
+});
 
 var AboutPage = React.createClass({
     render: function() {
         return (
             <div>
                 About
+                <CommentBox fireurl="https://burning-inferno-6221.firebaseio.com" />
                 <Link href="/">Home</Link>
             </div>
             )
     }
 });
 
-var routes = (
-    <Routes>
-        <Route path="/" view={MainPage} />
-        <Route path="/about" view={AboutPage} />
-    </Routes>
-    )
+var App = React.createClass({
 
-
-RRouter.start(routes, function(view) {
-    React.renderComponent(view, document.body);
+    render: function() {
+        return (
+            <Locations path={this.props.path}>
+                <Location path="/" handler={MainPage} />
+                <Location path="/about" handler={AboutPage} />
+            </Locations>
+            )
+    }
 });
 
 
+if (typeof window !== 'undefined') {
+    window.onload = function() {
+        React.renderComponent(
+            App({ path:'/' }),
+            document.getElementById('content')
+        );
+    }
+}
+
+// Server side rendering!
+
+//var React = require('react')
+//var App = require('./lib/index')
+
+//var app = App({path:'/'})
+//var markup = React.renderComponentToString(app)
+
+
+//var React = require('react'),
+//    Firebase = require('firebase');
+//    ReactFireMixin = require('reactfire');
+
+//var app = App({path:'/about'})
+//var markup = React.renderComponentToString(app)
 
 module.exports = App;
+

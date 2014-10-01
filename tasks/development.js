@@ -1,5 +1,5 @@
 var gulp    = require('gulp')
-  , config = require('./webpack.config').development
+  , config = require('./webpack.configs').development
   , WebpackDevServer = require("webpack-dev-server")
   , webpack = require('webpack');
 
